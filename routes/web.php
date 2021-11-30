@@ -27,6 +27,8 @@ Route::get('/login', [SessionsController::class, 'iniciarSesion'])->name('login.
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register.create');
 
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+
 /*   Route::get('/', HomeController::class); */
 
 /* Route::get('login', [loginController::class, 'iniciarSesion'] ); */

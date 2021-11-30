@@ -11,24 +11,35 @@
 
   </head>
 
-  <body class="bg-green-400">
+  <body class="bg-indigo-300">
 
-    <nav class="flex py-5 bg-indigo-500 text-white">
-        <div class="w-1/2 px-12 mr-auto">
-            <p class="text-2x1 font-bold">WorkDone</p>
-
-        </div>
+    <nav class="flex py-5 bg-indigo-500 text-white border-b-8 border-pink-500">                             
 
         <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
 
           @if (auth()->check())
 
-              <li class="mx-8">
-                  <p class="text-x1">Welcome <b> {{ auth()->user()->first_name }} </b></p>
-              </li>
-       
+          
+          <div class="block absolute left-20 top-0 my-2 h-13 px-5 bg-white border border-gray-200 rounded-lg shadow-lg">
+          
+            <img src=" {{ asset('images/logo.png') }} " class="h-10 w-30 my-2">
+  
+          </div>
+
+
               <li>
-                <a href=" {{route('logout.destroy')}} " class="font-bold 
+                  <p class="text-x1 my-1">Welcome <b class="rounded-md px-5 font-bold border-2 border-white"> {{ auth()->user()->first_name}} </b></p>
+              </li>
+
+                <li class="mx-2 ">
+                  <a href="#">
+                    <img src=" {{asset('images/Vector.png')}}" class="h-8 w-10 top-0">
+                  </a>
+                </li>
+              
+       
+              <li class="my-1">
+                <a href=" {{route('logout.destroy')}} " class="font-bold  
                 border-2 border-white py-2 px-4 rounded-md bg-red-500 hover:bg-red-600">Log Out</a>
               </li>
 

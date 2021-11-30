@@ -11,7 +11,7 @@
 
   </head>
 
-  <body class="bg-green-400">
+  <body class="bg-pink-400">
 
     <!-- Document body -->
     @yield('content')

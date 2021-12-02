@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\AnuncioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,24 @@ Route::get('/account', [AccountController::class, 'activate'])
 Route::get('/logout', [SessionsController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout.destroy');
+
+
+Route::get('/admin', [AnuncioController::class, 'index'])
+    ->middleware('auth.admin')
+    ->name('admin.index');
+
+Route::get('/admin/create', [AnuncioController::class, 'create'])
+    ->name('admin.create');
+
+Route::post('/admin', [AnuncioController::class, 'store'])
+    ->name('admin.store');
+
+
+
+
+
+
+
 
 /*   Route::get('/', HomeController::class); */
 

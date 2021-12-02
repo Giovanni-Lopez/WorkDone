@@ -8,25 +8,10 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    //
 
     public function create(){
         return view('auth.register');
     }
-
-   /*  public function store(Request $request){
-
-        $request->validate([
-            'first_name' => 'required', 
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
-        ]);
-
-        $user = User::create(request( ['first_name', 'last_name', 'email', 'password'] ));
-        auth()->login($user);
-        return redirect()->route("register.account");
-    } */
 
     public function store(Request $request){
 

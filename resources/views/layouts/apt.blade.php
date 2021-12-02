@@ -11,7 +11,7 @@
 
   </head>
 
-  <body class="bg-pink-400">
+  <body class="bg-gradient-to-r from-fon1 to-fon2">
 
     <!-- Document body -->
     @yield('content')

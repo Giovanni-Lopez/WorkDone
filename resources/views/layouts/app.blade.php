@@ -11,9 +11,15 @@
 
   </head>
 
-  <body class="bg-indigo-300">
+  <body class="bg-gradient-to-r from-fon1 to-fon2">
 
-    <nav class="flex py-5 bg-indigo-500 text-white border-b-8 border-pink-500">                             
+    <nav class="flex py-5 bg-colorNav text-white border-b-8 border-borNav">     
+      
+      <div class="block absolute left-20 top-0 my-1.5 h-13 px-5 bg-white border border-gray-200 rounded-lg shadow-lg">
+          
+        <img src=" {{ asset('images/logo.png') }} " class="h-10 w-30 my-2">
+
+      </div>
 
         <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
 
@@ -46,7 +52,7 @@
           @else
           <li class="mx-6">
             <a href="{{route('login.iniciarSesion')}} " class="font-semibold 
-            hover:bg-indigo-700 py-3 px-4 rounded-md">Log In</a>
+            hover:bg-purple-700 py-3 px-4 rounded-md">Log In</a>
           </li>
 
           <li>

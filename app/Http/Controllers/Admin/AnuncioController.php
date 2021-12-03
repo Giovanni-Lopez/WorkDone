@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Anuncio;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Anuncio;
+
+use function GuzzleHttp\Promise\all;
 
 class AnuncioController extends Controller
 {
@@ -19,22 +21,21 @@ class AnuncioController extends Controller
 
     public function store(Request $request){
 
-        $request->validate([
-            'titulo' => 'required', 
-            'publics' => 'required',
-        ]);
+        $anuncio = new Anuncio;
 
-        $usu = new User();
+        $anuncio->titulo = $request->titulo;
+        $anuncio->descripcion = $request->descripcion;  
 
-        $usu->titulo = $request->titulo;
-        $usu->publics = $request->last_name;       
+        $anuncio->save();
 
-        $usu->save();
+        return redirect()->route('admin.index');
 
-        return redirect()->to('/index');
     }  
 
-    public function show($id){
+    public function vista(){
 
+        $anunc = Anuncio::all();
+
+        return view('admin.anuncios.vista', compact('anunc'));
     }
 }

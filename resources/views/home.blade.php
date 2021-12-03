@@ -84,22 +84,7 @@
 
         <br>
 
-        <nav class="flex py-12 bg-colorNav text-white"> 
-
-            <div class="flex space-x-28 ml-auto mr-28 my-4">
-                <div>
-                    <label>Copyright© 2020<br>Powered by <b>PROgresso Labs</b></label>
-                </div>
-                <div>
-                    <label>P.O. Box 902 3472 Ullamcorper Street<br>
-                        Lynchburg DC 29738<br>
-                        (268) 442-2428</label>
-                </div>
-               
-              </div>            
-            
-                        
-        </nav>
+        
 
     </div>    
 

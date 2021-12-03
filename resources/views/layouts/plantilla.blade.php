@@ -11,7 +11,7 @@
 
   </head>
 
-  <body class="bg-gradient-to-r from-fon1 to-fon2">
+  <body class="bg-white">
 
     <nav class="flex py-5 bg-colorNav text-white border-b-8 border-borNav">     
       
@@ -36,11 +36,10 @@
               <li class="mx-1">
                 
                 <a href=" {{route('logout.destroy')}} ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">   
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-                </a>
-                
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">   
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                </a>                
               </li>
 
 
@@ -48,30 +47,10 @@
                 <a href="#">
                   <img src=" {{asset('images/Vector.png')}}" class="h-8 w-10 top-0">
                 </a>
-              </li>
-
-          @else
-          Log In
-          <li class="mx-1">       
-
-            <a href=" {{route('login.iniciarSesion')}} ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                </svg>
-            </a>
-
-          </li>
-
-          <li class="mx-3.5 ">
-              <a href=" {{route('register.create')}} " class="font-semibold 
-              border-2 border-white py-2 px-4 rounded-md hover:bg-white hover:text-indigo-700">Register</a>
-          </li>
+              </li>          
 
           @endif
-
             
-
-
         </ul>
 
     </nav>
@@ -92,9 +71,8 @@
           </div>
          
         </div>            
-      
-                  
-  </nav>
+                        
+    </nav>
 
   </body>
 </html>

@@ -17,18 +17,22 @@ use App\Http\Controllers\Admin\AnuncioController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+Route::get('/', [SessionsController::class, 'index'])
+   ->middleware('auth')
+   ->name('/');
 
 Route::get('/login', [SessionsController::class, 'iniciarSesion'])
     ->middleware('guest')
-    ->name('login.iniciarSesion');
+    ->name('login.iniciarSesion');  
 
 Route::post('/login', [SessionsController::class, 'store'])
     ->name('login.store');
 
-//register
+
+/* Route::get('/listado', [SessionsController::class, 'listado'])
+    ->middleware('auth')
+    ->name('login.listado'); */
+
 Route::get('/register', [RegisterController::class, 'create'])
     ->middleware('guest')
     ->name('register.create');
@@ -50,21 +54,13 @@ Route::get('/admin', [AnuncioController::class, 'index'])
     ->name('admin.index');
 
 Route::get('/admin/create', [AnuncioController::class, 'create'])
+    ->middleware('auth.admin')
     ->name('admin.create');
 
-Route::post('/admin', [AnuncioController::class, 'store'])
+Route::post('/admin/store', [AnuncioController::class, 'store'])
+    ->middleware('auth.admin')
     ->name('admin.store');
 
-
-
-
-
-
-
-
-/*   Route::get('/', HomeController::class); */
-
-/* Route::get('login', [loginController::class, 'iniciarSesion'] ); */
-
-/* Route::get('users',[ UserController::class, '']); */
-
+Route::get('/admin/vista', [AnuncioController::class, 'vista'])
+    ->middleware('auth.admin')
+    ->name('admin.vista');

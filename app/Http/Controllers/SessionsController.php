@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anuncio;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\Events\Logout;
@@ -9,6 +10,14 @@ use Illuminate\Auth\Events\Logout;
 class SessionsController extends Controller
 {
     //
+
+    public function index(){
+
+        $anunc = Anuncio::all();
+        return view('admin.anuncios.vista', compact('anunc'));
+    }
+
+
     public function iniciarSesion(){
         return view('auth.login');
     }
@@ -22,12 +31,21 @@ class SessionsController extends Controller
             if(auth()->user()->role == 'admin'){
                 return redirect()->route('admin.index'); 
             }else{
-                return redirect()->to('/'); 
+                return redirect()->route('/'); 
             }
         }
 
         
     }
+
+
+    /* public function listado(){
+
+        $anunc = Anuncio::all();
+
+        return view('admin.anuncios.vista', compact('anunc'));
+    } */
+
 
     public function destroy(){
         auth()->logout();

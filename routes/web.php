@@ -29,10 +29,6 @@ Route::post('/login', [SessionsController::class, 'store'])
     ->name('login.store');
 
 
-/* Route::get('/listado', [SessionsController::class, 'listado'])
-    ->middleware('auth')
-    ->name('login.listado'); */
-
 Route::get('/register', [RegisterController::class, 'create'])
     ->middleware('guest')
     ->name('register.create');

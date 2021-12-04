@@ -15,7 +15,7 @@ class SessionsController extends Controller
 
         $anunc = Anuncio::all();
         
-        return view('usuario.vista', compact('anunc'));
+        return view('listado.vista', compact('anunc'));
     }
 
 

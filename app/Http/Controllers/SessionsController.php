@@ -14,7 +14,8 @@ class SessionsController extends Controller
     public function index(){
 
         $anunc = Anuncio::all();
-        return view('admin.anuncios.vista', compact('anunc'));
+        
+        return view('usuario.vista', compact('anunc'));
     }
 
 
@@ -34,18 +35,8 @@ class SessionsController extends Controller
                 return redirect()->route('/'); 
             }
         }
-
         
-    }
-
-
-    /* public function listado(){
-
-        $anunc = Anuncio::all();
-
-        return view('admin.anuncios.vista', compact('anunc'));
-    } */
-
+    }    
 
     public function destroy(){
         auth()->logout();

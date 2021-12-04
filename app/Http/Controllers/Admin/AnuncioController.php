@@ -30,12 +30,5 @@ class AnuncioController extends Controller
 
         return redirect()->route('admin.index');
 
-    }  
-
-    public function vista(){
-
-        $anunc = Anuncio::all();
-
-        return view('admin.anuncios.vista', compact('anunc'));
-    }
+    }     
 }

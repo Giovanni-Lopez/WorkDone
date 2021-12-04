@@ -56,7 +56,3 @@ Route::get('/admin/create', [AnuncioController::class, 'create'])
 Route::post('/admin/store', [AnuncioController::class, 'store'])
     ->middleware('auth.admin')
     ->name('admin.store');
-
-Route::get('/admin/vista', [AnuncioController::class, 'vista'])
-    ->middleware('auth.admin')
-    ->name('admin.vista');

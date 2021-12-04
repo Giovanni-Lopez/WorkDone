@@ -31,12 +31,14 @@
             </tr>
         </table>        
         
-        <div class="text-center space-y-2 sm:text-left overflow-auto h-32">
-        <div class="space-y-0.5">            
-            <p class="text-gray-500  font-medium py-5">
-                <li>{{$anuncio->descripcion}}</li>
-            </p>
-        </div>         
+        <div class="text-center space-y-2 sm:text-left font-semibold overflow-auto h-32">
+        <div class="space-y-0.5">   Titulo del Anuncio:
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"> {{$anuncio->titulo}} </div>                     
+        </div> 
+        
+        <div class="space-y-0.5">   Descripcion del Anuncio:
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"> {{$anuncio->descripcion}} </div>                     
+        </div> 
         </div>
     </div>
 

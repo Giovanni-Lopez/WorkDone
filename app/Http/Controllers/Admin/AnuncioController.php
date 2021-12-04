@@ -21,6 +21,11 @@ class AnuncioController extends Controller
 
     public function store(Request $request){
 
+        $request->validate([
+            'titulo' => 'required', 
+            'descripcion' => 'required',            
+        ]);
+
         $anuncio = new Anuncio;
 
         $anuncio->titulo = $request->titulo;
